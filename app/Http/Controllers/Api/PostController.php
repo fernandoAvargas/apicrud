@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\StorePostRequest;
-use App\Http\Resources\PostResouce;
-use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
+use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
@@ -16,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return PostResouce::collection($posts);
+        return PostResource::collection($posts);
     }
 
      /**
